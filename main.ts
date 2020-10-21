@@ -1,10 +1,9 @@
-input.onButtonPressed(Button.A, function () {
-    radio.sendString("cccccccccccc")
-})
-radio.onReceivedString(function (receivedString) {
-    basic.showString(receivedString)
-})
-radio.setGroup(1)
 basic.forever(function () {
-	
+    for (let i = 0; i <= 4; i++) {
+        for (let j = 0; j <= 4; j++) {
+            if (i % 2 == j % 2) {
+                led.plot(i, j)
+            }
+        }
+    }
 })
